@@ -1,6 +1,9 @@
 # # Advent of Code 2025.
 # Day 4: Printing Department
 
+import pygame
+import imageio
+
 def render(g: dict):
     curr_y = 0
     for x, y in g:
@@ -47,6 +50,29 @@ def remove_candidates(grid: dict) -> dict:
     return new_grid
 
 
+def render(grid: dict, screen, scale: int, iteration: int, filenames: list):
+    black = (0, 0, 0)
+    grey = (40, 40, 40)
+    green = (0, 255, 0)
+    red = (255, 0, 0)
+    screen.fill(black)
+
+    for x, y in grid:
+        tile_col = grey
+        if grid[(x, y)] == "@":
+            tile_col = green
+        elif grid[(x, y)] == "x":
+            tile_col = red
+        else:
+            tile_col = grey
+        pygame.draw.rect(screen, tile_col, pygame.Rect(x * scale, y * scale, scale - 1, scale - 1))
+
+    screenshot_name = f"screenshots/{iteration:05}.png"
+    pygame.image.save(screen, screenshot_name)
+    filenames.append(screenshot_name)
+    pygame.display.flip()
+
+
 file = open("input.txt", "r")
 contents = file.read()
 
@@ -60,14 +86,29 @@ for line in contents.split("\n"):
 
     y += 1
 
-total, count = 0, 0
+print(x, y)
+
+scale = 6
+screen_size = [scale * x, scale * y]  # [width, height]
+pygame.init()                                               # Initialize the game engine.
+screen = pygame.display.set_mode(screen_size)
+
+total, count, iteration = 0, 0, 0
+filenames = []
 
 while total == 0 or count > 0:
-    render(grid)
+    # render(grid, screen, scale)
     removal_candidates, count = find_removal_candidates(grid)
     total += count
-    render(removal_candidates)
+    render(removal_candidates, screen, scale, iteration, filenames)
     print(count)
     grid = remove_candidates(removal_candidates)
+    iteration += 1
 
 print(total)
+print(filenames)
+
+images = []
+for filename in filenames:
+    images.append(imageio.imread(filename))
+imageio.mimsave('day4.gif', images, fps=5, loop=0)
