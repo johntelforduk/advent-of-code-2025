@@ -20,3 +20,13 @@ Or, `pip install -r requirements.txt`
 Visualisation of most common paths that the beam follows.
 
 ![Grid](./07-laboratories/day07.png)
+
+## Day 8: Playground
+
+Test data visualised for Part 1...
+
+![Network](./08-playground/day08.png)
+
+... and Part 2.
+
+![Network](./08-playground/day08_2.png)
