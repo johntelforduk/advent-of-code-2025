@@ -5,6 +5,8 @@ Solutions to AOC puzzles.
 pip install icecream
 pip install pygame
 pip install imageio
+pip install matplotlib
+pip install networkx
 ```
 
 Or, `pip install -r requirements.txt`
