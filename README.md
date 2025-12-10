@@ -7,6 +7,8 @@ pip install pygame
 pip install imageio
 pip install matplotlib
 pip install networkx
+pip install plotly
+pip install shapely
 ```
 
 Or, `pip install -r requirements.txt`
@@ -30,3 +32,9 @@ Test data visualised for Part 1...
 ... and Part 2.
 
 ![Network](./08-playground/day08_2.png)
+
+## Day 9: Movie Theater
+
+Largest possible rectangle (according to rules of puzzle).
+
+![Network](./09-movie-theater/day09.png)
