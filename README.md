@@ -9,6 +9,7 @@ pip install matplotlib
 pip install networkx
 pip install plotly
 pip install shapely
+pip install scipy
 ```
 
 Or, `pip install -r requirements.txt`
