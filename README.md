@@ -42,6 +42,6 @@ Largest possible rectangle (according to rules of puzzle).
 
 ## Day 11: Reactor
 
-Paths that are solutions to Part 1.
+All of the paths that are solutions to Part 1 (477 paths).
 
 ![Paths](./11-reactor/day11.gif)
