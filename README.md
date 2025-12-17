@@ -38,4 +38,10 @@ Test data visualised for Part 1...
 
 Largest possible rectangle (according to rules of puzzle).
 
-![Network](./09-movie-theater/day09.png)
+![Rectangle](./09-movie-theater/day09.png)
+
+## Day 11: Reactor
+
+Paths that are solutions to Part 1.
+
+![Paths](./11-reactor/day11.gif)
